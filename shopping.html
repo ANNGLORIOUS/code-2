@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+  background-color: #171515;
+  font-size: 1.35em;
+  #header{
+    background-color: #6F5B3E;
+    margin: 30px auto;
+    padding: 20px 20px 30px;
+    text-align: center;
+    h1{
+      font-family: cursive;
+      text-decoration-line: underline;
+    } 
+    h2{
+      font-family: cursive;
+    } 
+    #inputText{
+      font-size: 1.15em;
+      font-family: monospace;
+      padding: 8px;
+      width: 50%;
+      background-color: #F9F6F0;
+      border: 3px solid #F9F6F0;
+      border-radius: 10px; 
+    } 
+    button{
+      font-size: 1.15em;
+      font-family: monospace;
+      font-weight: bolder;
+      padding: 5px;
+      margin-left: 20px;
+      border: 3px solid #F9F6F0;
+      border-radius: 10px;
+      background-color: #F9F6F0;
+    } 
+    #list{
+      list-style-type: none;
+      margin: 20px auto;
+      padding:0;
+      font-family: monospace;
+      font-size: 1.15em;
+    } 
+    li{
+      font-weight: bold;
+      padding: 10px;
+    } 
+    li:nth-child(even) {
+      background-color: #C4AE78;
+    } 
+    li:nth-child(odd) {
+      background-color: #F9F6F0;
+    } 
+    span.close{
+      position: absolute;
+      right: 0;
+      padding-right: 30px;
+      cursor: pointer;
+    }
+  } 
+} 
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Shopping List &#128221;</h1>
+        <h2>Add what you will buy</h2>
+        <input id="inputText" type="text" placeholder="Add items">
+        <button id="addItemsBtn">ADD</button>
+        <button id="clearBtn">CLEAR</button>
+        <ol id="shoppinglist"></ol>
+      </div>
+      
+</body>
+</html>
