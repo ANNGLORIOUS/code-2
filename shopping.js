@@ -11,23 +11,26 @@ const shoppingListContainer = document.getElementById('shopping-list');
 function renderShoppingList() {
     shoppingListContainer.innerHTML = '';
     shoppingList.forEach((item, index) => {
+// Create list item
         const li = document.createElement('li');
         li.textContent = item;
         li.dataset.index = index;
-        if (item.purchased) {
-            li.classList.add('purchased');
+        if (item.bought) {
+            li.classList.add('bought');
         }
-        li.addEventListener('click', markPurchased);
+        li.addEventListener('click', markbought);
         li.addEventListener('dblclick', editItem);
+        // Add li to the DOM
         shoppingListContainer.appendChild(li);
     });
 }
 
 // Function to add item to shopping list
 function addItem() {
+     // trim the input value to remove whitespace - disallowing duplicate items due to white space in the process
     const item = inputText.value.trim();
     if (item) {
-        shoppingList.push({ text: item, purchased: false });
+        shoppingList.push({ text: item, bought: false });
         inputText.value = '';
         saveToLocalStorage();
         renderShoppingList();
@@ -35,9 +38,9 @@ function addItem() {
 }
 
 // Function to mark item as purchased
-function markPurchased(event) {
+function markbought(event) {
     const index = parseInt(event.target.dataset.index);
-    shoppingList[index].purchased = !shoppingList[index].purchased;
+    shoppingList[index].bought = !shoppingList[index].bought;
     saveToLocalStorage();
     renderShoppingList();
 }
