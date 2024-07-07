@@ -37,7 +37,7 @@ function addItem() {
     }
 }
 
-// Function to mark item as purchased
+// Function to mark item as bought
 function markbought(event) {
     const index = parseInt(event.target.dataset.index);
     shoppingList[index].bought = !shoppingList[index].bought;
@@ -65,6 +65,7 @@ function clearList() {
 
 // Function to save shopping list to local storage
 function saveToLocalStorage() {
+    // Convert to JSON string and set to local storage
     localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
 }
 
