@@ -7,8 +7,8 @@ const addItemBtn = document.getElementById('add-item-btn');
 const clearBtn = document.getElementById('clear-btn');
 const shoppingListContainer = document.getElementById('shopping-list');
 
-// Function to render shopping list
-function renderShoppingList() {
+// Function to update shopping list
+function updateShoppingList() {
     shoppingListContainer.innerHTML = '';
     shoppingList.forEach((item, index) => {
 // Create list item
@@ -33,7 +33,7 @@ function addItem() {
         shoppingList.push({ text: item, bought: false });
         inputText.value = '';
         saveToLocalStorage();
-        renderShoppingList();
+        updateShoppingList();
     }
 }
 
@@ -42,7 +42,7 @@ function markbought(event) {
     const index = parseInt(event.target.dataset.index);
     shoppingList[index].bought = !shoppingList[index].bought;
     saveToLocalStorage();
-    renderShoppingList();
+    updateShoppingList();
 }
 
 // Function to edit item
@@ -52,7 +52,7 @@ function editItem(event) {
     if (newText) {
         shoppingList[index].text = newText;
         saveToLocalStorage();
-        renderShoppingList();
+        updateShoppingList();
     }
 }
 
@@ -60,7 +60,7 @@ function editItem(event) {
 function clearList() {
     shoppingList = [];
     saveToLocalStorage();
-    renderShoppingList();
+    updateShoppingList();
 }
 
 // Function to save shopping list to local storage
@@ -73,5 +73,5 @@ function saveToLocalStorage() {
 addItemBtn.addEventListener('click', addItem);
 clearBtn.addEventListener('click', clearList);
 
-// Render shopping list on page load
-renderShoppingList();
+// Update shopping list on page load
+updateShoppingList();
