@@ -21,7 +21,7 @@ function updateShoppingList() {
         li.addEventListener('click', markbought);
         li.addEventListener('dblclick', editItem);
         // Add li to the DOM
-        shoppingListContainer.appendChild(li);
+        shoppingListContainer.append(li);
     });
 }
 
@@ -35,6 +35,9 @@ function addItem() {
         saveToLocalStorage();
         updateShoppingList();
     }
+    addItemBtn.style.marginLeft="30px";
+    addItemBtn.style.marginTop ="10px";
+
 }
 
 // Function to mark item as bought
@@ -43,6 +46,8 @@ function markbought(event) {
     shoppingList[index].bought = !shoppingList[index].bought;
     saveToLocalStorage();
     updateShoppingList();
+    // event.target.style.textDecoration = "line-through";
+    // event.terget.style.backgroundColor = "#f2f2f2;";
 }
 
 // Function to edit item
@@ -61,6 +66,9 @@ function clearList() {
     shoppingList = [];
     saveToLocalStorage();
     updateShoppingList();
+clearBtn.style.marginLeft ="30px";
+clearBtn.style.marginTop ="10px";
+
 }
 
 // Function to save shopping list to local storage
